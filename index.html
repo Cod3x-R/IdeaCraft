@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdeaCraft | Brand Design for Startups</title>
+  <meta name="description" content="IdeaCraft delivers premium graphic design for South African startups — logos, websites, social media content, and complete brand packages. From R2,500.">
+  <meta property="og:title" content="IdeaCraft | Brand Design for Startups">
+  <meta property="og:description" content="Complete brand packages for startups. Logos, websites, social media, print. Starting at R2,500.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">✦</div>
+        IdeaCraft
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-mobile" id="navMobile">
+    <button class="nav-mobile-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="#services"  onclick="closeMobileNav()">Services</a>
+    <a href="#packages"  onclick="closeMobileNav()">Packages</a>
+    <a href="#process"   onclick="closeMobileNav()">Process</a>
+    <a href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
+    <a href="#contact"   onclick="closeMobileNav()">Contact</a>
+    <a href="#contact" class="btn btn-primary btn-lg" onclick="closeMobileNav()">Get a Quote</a>
+  </div>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Now accepting new clients — South Africa
+          </div>
+          <h1>
+            We Build<br>
+            Brands That<br>
+            <span class="gradient-text">Get Noticed.</span>
+          </h1>
+          <p>
+            IdeaCraft is a full-service brand design studio for startups and
+            growing South African businesses. Logos, websites, social media —
+            everything you need to launch and scale.
+          </p>
+          <div class="hero-ctas">
+            <a href="#packages" class="btn btn-primary btn-lg">View Packages</a>
+            <a href="#portfolio" class="btn btn-outline btn-lg">See Our Work ↓</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">50+</div>
+              <div class="hero-stat-label">Brands Launched</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">5★</div>
+              <div class="hero-stat-label">Client Rating</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">72h</div>
+              <div class="hero-stat-label">Avg First Draft</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">R2.5k</div>
+              <div class="hero-stat-label">Packages From</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Marquee ── -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>LOGO DESIGN</span><span class="sep">•</span>
+        <span>WEBSITE DESIGN</span><span class="sep">•</span>
+        <span>SOCIAL MEDIA</span><span class="sep">•</span>
+        <span>BUSINESS CARDS</span><span class="sep">•</span>
+        <span>FLYERS</span><span class="sep">•</span>
+        <span>BRAND IDENTITY</span><span class="sep">•</span>
+        <span>MARKETING GUIDES</span><span class="sep">•</span>
+        <span>YOUTUBE BANNERS</span><span class="sep">•</span>
+        <span>FACEBOOK CONTENT</span><span class="sep">•</span>
+        <span>TIKTOK CONTENT</span><span class="sep">•</span>
+        <!-- duplicate for seamless loop -->
+        <span>LOGO DESIGN</span><span class="sep">•</span>
+        <span>WEBSITE DESIGN</span><span class="sep">•</span>
+        <span>SOCIAL MEDIA</span><span class="sep">•</span>
+        <span>BUSINESS CARDS</span><span class="sep">•</span>
+        <span>FLYERS</span><span class="sep">•</span>
+        <span>BRAND IDENTITY</span><span class="sep">•</span>
+        <span>MARKETING GUIDES</span><span class="sep">•</span>
+        <span>YOUTUBE BANNERS</span><span class="sep">•</span>
+        <span>FACEBOOK CONTENT</span><span class="sep">•</span>
+        <span>TIKTOK CONTENT</span><span class="sep">•</span>
+      </div>
+    </div>
+
+    <!-- ── Services ── -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">What We Do</div>
+          <h2>Every tool your brand needs,<br>in one studio.</h2>
+          <p>From your first logo to a full digital presence — we handle it all so you can focus on running your business.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">🎨</div>
+            <h3>Logo Design</h3>
+            <p>Multiple unique logo concepts with colour variations, black & white versions, and full file pack (AI, PNG, SVG, PDF).</p>
+          </div>
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon">🌐</div>
+            <h3>Website Design</h3>
+            <p>Sleek, mobile-first landing pages and multi-page websites built to convert visitors into customers.</p>
+          </div>
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-icon">📱</div>
+            <h3>Social Media Content</h3>
+            <p>Branded posts, stories, reels, and banners for Facebook, Instagram, TikTok, and YouTube — ready to post.</p>
+          </div>
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">🖨️</div>
+            <h3>Flyers & Print</h3>
+            <p>Eye-catching flyers, posters, and print materials in both digital and print-ready formats.</p>
+          </div>
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon">💼</div>
+            <h3>Business Cards</h3>
+            <p>Professional business card designs with multiple layout options. Print-ready files included.</p>
+          </div>
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-icon">📚</div>
+            <h3>Marketing Guides</h3>
+            <p>Step-by-step PDF guides for WhatsApp Business, Instagram, Facebook, TikTok, and Canva — set up done right.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Packages ── -->
+    <section class="section" id="packages" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Pricing</div>
+          <h2>Packages built for<br>every stage of growth.</h2>
+          <p>Transparent pricing. No hidden costs. All packages include source files and unlimited revisions within scope.</p>
+        </div>
+        <div class="packages-grid">
+
+          <!-- Starter -->
+          <div class="package-card reveal reveal-delay-1">
+            <div class="package-name">Starter</div>
+            <div class="package-price">R2,500</div>
+            <p class="package-desc">Perfect for launching your brand identity from scratch.</p>
+            <hr class="package-divider">
+            <ul class="package-features">
+              <li>2x Logo variances (full file pack)</li>
+              <li>3x Business Card designs</li>
+              <li>3x Flyer designs</li>
+              <li>1x Facebook Banner</li>
+              <li>1x Instagram Banner</li>
+              <li>Source files included</li>
+              <li>2 rounds of revisions</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline">Get Started</a>
+          </div>
+
+          <!-- Gold Startup — Featured -->
+          <div class="package-card featured reveal reveal-delay-2">
+            <span class="package-badge">Most Popular</span>
+            <div class="package-name">Gold Startup</div>
+            <div class="package-price">R6,500</div>
+            <p class="package-desc">The complete startup launch kit — brand, web, and social.</p>
+            <hr class="package-divider">
+            <ul class="package-features">
+              <li>1x Landing Page Website</li>
+              <li>3x Logo variances (full file pack)</li>
+              <li>3x Facebook Banners</li>
+              <li>3x YouTube Banners</li>
+              <li>3x Business Card designs</li>
+              <li>3x Flyer designs</li>
+              <li>WhatsApp Business setup guide (PDF)</li>
+              <li>Instagram guide + 5 videos + 10 posts</li>
+              <li>Facebook guide + 5 videos + 10 posts</li>
+              <li>TikTok guide + 5 videos + 10 posts</li>
+              <li>Canva usage guide (PDF)</li>
+              <li>Unlimited revisions (within scope)</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+          </div>
+
+          <!-- Platinum Launch -->
+          <div class="package-card reveal reveal-delay-3">
+            <div class="package-name">Platinum Launch</div>
+            <div class="package-price">R11,500</div>
+            <p class="package-desc">The full studio treatment for brands that mean business.</p>
+            <hr class="package-divider">
+            <ul class="package-features">
+              <li>Everything in Gold Startup</li>
+              <li>5-page Website (not just landing page)</li>
+              <li>Brand Style Guide PDF</li>
+              <li>Custom Email Signature design</li>
+              <li>1 month social content (20x posts/platform)</li>
+              <li>Priority turnaround</li>
+              <li>30-day post-delivery support</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline">Get Started</a>
+          </div>
+
+        </div>
+
+        <!-- Scale-Up row -->
+        <div style="margin-top: 1.5rem;">
+          <div class="packages-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+
+            <!-- Social Boost -->
+            <div class="package-card reveal reveal-delay-1">
+              <div class="package-name">Social Boost</div>
+              <div class="package-price">R2,000 <span>/ month</span></div>
+              <p class="package-desc">Monthly content to keep your socials active and on-brand.</p>
+              <hr class="package-divider">
+              <ul class="package-features">
+                <li>20x Facebook posts + 5 videos</li>
+                <li>20x Instagram posts + 5 videos</li>
+                <li>20x TikTok posts</li>
+                <li>All content sized per platform</li>
+                <li>Captions included</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline">Enquire</a>
+            </div>
+
+            <!-- Brand Refresh -->
+            <div class="package-card reveal reveal-delay-2">
+              <div class="package-name">Brand Refresh</div>
+              <div class="package-price">R3,800</div>
+              <p class="package-desc">Give your existing brand a modern, professional update.</p>
+              <hr class="package-divider">
+              <ul class="package-features">
+                <li>New logo (3 variances)</li>
+                <li>Updated brand colours + typography</li>
+                <li>New social media banner set</li>
+                <li>Business card redesign</li>
+                <li>Full file handover</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline">Enquire</a>
+            </div>
+
+            <!-- Custom -->
+            <div class="package-card package-custom reveal reveal-delay-3">
+              <div class="package-name">Custom Package</div>
+              <div class="package-price">Your Budget</div>
+              <p>Need something specific? We'll build a package around exactly what your business needs — nothing more, nothing less.</p>
+              <hr class="package-divider">
+              <ul class="package-features">
+                <li>Mix and match any service</li>
+                <li>Scale up or down anytime</li>
+                <li>Free 15-min discovery call</li>
+                <li>No obligation quote</li>
+              </ul>
+              <a href="#contact" class="btn">Get a Free Quote →</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Process ── -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-header reveal" style="text-align: center;">
+          <div class="section-label" style="justify-content: center;">How It Works</div>
+          <h2>From enquiry to delivery<br>in four simple steps.</h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="process-number">01</div>
+            <h3>Enquire</h3>
+            <p>Fill in our enquiry form or send us a message. We'll respond within 24 hours.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-number">02</div>
+            <h3>Brief</h3>
+            <p>We send you a detailed brand questionnaire so we understand your business, style, and vision.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="process-number">03</div>
+            <h3>Design</h3>
+            <p>We craft your brand assets and share concepts with you. Revisions until you love it.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="process-number">04</div>
+            <h3>Deliver</h3>
+            <p>All files delivered in every format you need, with guides to put everything to use immediately.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Portfolio ── -->
+    <section class="section" id="portfolio" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Our Work</div>
+          <h2>Built with intention.<br>Designed to stand out.</h2>
+          <p>Portfolio growing as we take on new clients. Every card below could be your brand.</p>
+        </div>
+        <div class="portfolio-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="logo">Logos</button>
+          <button class="filter-btn" data-filter="website">Websites</button>
+          <button class="filter-btn" data-filter="social">Social Media</button>
+          <button class="filter-btn" data-filter="print">Print</button>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item reveal reveal-delay-1" data-category="logo">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Logo Here</div>
+            <div class="portfolio-overlay">
+              <h3>Brand Identity</h3>
+              <p>Logo design + brand colours</p>
+              <span class="portfolio-tag">Logo</span>
+            </div>
+          </div>
+          <div class="portfolio-item reveal reveal-delay-2" data-category="website">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Website Here</div>
+            <div class="portfolio-overlay">
+              <h3>Landing Page</h3>
+              <p>Modern, mobile-first website</p>
+              <span class="portfolio-tag">Website</span>
+            </div>
+          </div>
+          <div class="portfolio-item reveal reveal-delay-3" data-category="social">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Social Content Here</div>
+            <div class="portfolio-overlay">
+              <h3>Social Media Kit</h3>
+              <p>Posts, stories + banners</p>
+              <span class="portfolio-tag">Social</span>
+            </div>
+          </div>
+          <div class="portfolio-item reveal reveal-delay-1" data-category="print">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Print Design Here</div>
+            <div class="portfolio-overlay">
+              <h3>Print Pack</h3>
+              <p>Business cards + flyers</p>
+              <span class="portfolio-tag">Print</span>
+            </div>
+          </div>
+          <div class="portfolio-item reveal reveal-delay-2" data-category="logo">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Brand Here</div>
+            <div class="portfolio-overlay">
+              <h3>Full Brand Package</h3>
+              <p>Gold Startup package</p>
+              <span class="portfolio-tag">Branding</span>
+            </div>
+          </div>
+          <div class="portfolio-item reveal reveal-delay-3" data-category="social">
+            <div class="portfolio-item-bg"></div>
+            <div class="portfolio-placeholder-text">Your Campaign Here</div>
+            <div class="portfolio-overlay">
+              <h3>Social Boost</h3>
+              <p>Monthly content campaign</p>
+              <span class="portfolio-tag">Social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="reveal">
+            <div class="section-label">Get In Touch</div>
+            <h2>Ready to build something great?</h2>
+            <p>Fill in the form and we'll get back to you within 24 hours with a detailed quote. No obligation, no pressure.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-detail-icon">📧</div>
+                <div class="contact-detail-text">
+                  <strong>Email</strong>
+                  <span>[YOUR_EMAIL]</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">📱</div>
+                <div class="contact-detail-text">
+                  <strong>WhatsApp / Phone</strong>
+                  <span>[YOUR_PHONE]</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">📍</div>
+                <div class="contact-detail-text">
+                  <strong>Location</strong>
+                  <span>South Africa — Remote & Nationwide</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">⏱️</div>
+                <div class="contact-detail-text">
+                  <strong>Response Time</strong>
+                  <span>Within 24 hours (Mon–Fri)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="contact-form reveal reveal-delay-2">
+            <form
+              name="inquiry"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              id="contactForm"
+            >
+              <input type="hidden" name="form-name" value="inquiry">
+              <input type="hidden" name="bot-field" style="display:none;">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name *</label>
+                  <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                </div>
+                <div class="form-group">
+                  <label for="business">Business Name</label>
+                  <input type="text" id="business" name="business" placeholder="Awesome Co.">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">WhatsApp / Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+27 82 000 0000">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a package or service...</option>
+                  <option value="starter">Starter Package — R2,500</option>
+                  <option value="gold-startup">Gold Startup Package — R6,500</option>
+                  <option value="platinum-launch">Platinum Launch Package — R11,500</option>
+                  <option value="social-boost">Social Boost — R2,000/month</option>
+                  <option value="brand-refresh">Brand Refresh — R3,800</option>
+                  <option value="website-only">Website Only</option>
+                  <option value="custom">Custom Package (not sure yet)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Us About Your Business *</label>
+                <textarea id="message" name="message" placeholder="What does your business do? Who are your customers? Any ideas for colours or style?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg form-submit" id="formSubmitBtn">
+                Send Enquiry →
+              </button>
+            </form>
+            <div id="formSuccess" style="display:none; text-align:center; padding:2.5rem 1rem;">
+              <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
+              <h3 style="margin-bottom:0.5rem;">Enquiry Received!</h3>
+              <p>Thanks! We'll get back to you within 24 hours with your quote.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">✦</div>
+            IdeaCraft
+          </a>
+          <p>Full-service brand design studio for South African startups and growing businesses.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Logo Design</a></li>
+            <li><a href="#services">Website Design</a></li>
+            <li><a href="#services">Social Media</a></li>
+            <li><a href="#services">Flyers & Print</a></li>
+            <li><a href="#services">Business Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Packages</h4>
+          <ul>
+            <li><a href="#packages">Starter — R2,500</a></li>
+            <li><a href="#packages">Gold Startup — R6,500</a></li>
+            <li><a href="#packages">Platinum Launch — R11,500</a></li>
+            <li><a href="#packages">Social Boost — R2,000/mo</a></li>
+            <li><a href="#packages">Custom Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Get a Quote</a></li>
+            <li><a href="mailto:[YOUR_EMAIL]">[YOUR_EMAIL]</a></li>
+            <li><a href="tel:[YOUR_PHONE]">[YOUR_PHONE]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 IdeaCraft. All rights reserved. — Made with 💚 in South Africa</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">✦</a>
+          <a href="#" aria-label="TikTok">♪</a>
+          <a href="#" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

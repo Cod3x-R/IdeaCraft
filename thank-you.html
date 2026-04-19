@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | IdeaCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .thankyou-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .thankyou-card {
+      background: var(--surface);
+      border: 1px solid var(--emerald-border);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+    }
+    .thankyou-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .thankyou-card h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .thankyou-card p  { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="thankyou-page">
+    <div class="thankyou-card">
+      <span class="thankyou-icon">✅</span>
+      <h1>Enquiry Received!</h1>
+      <p>Thanks for reaching out. We'll review your details and get back to you <strong>within 24 hours</strong> with a personalised quote.</p>
+      <p style="font-size:0.9rem; color: var(--text-muted);">Keep an eye on your inbox — and check your spam folder just in case.</p>
+      <a href="/" class="btn btn-primary btn-lg">← Back to Home</a>
+    </div>
+  </div>
+  <script>
+    const saved = localStorage.getItem('ideacraft-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  </script>
+</body>
+</html>
