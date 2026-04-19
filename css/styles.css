@@ -847,12 +847,17 @@ p  { color: var(--text-secondary); }
 
 /* ── Logo Image ── */
 .site-logo {
-  height: 48px;
+  height: 36px;
   width: auto;
   display: block;
   object-fit: contain;
-  border-radius: 6px;
 }
 .footer .site-logo {
-  height: 56px;
+  height: 40px;
+}
+[data-theme="dark"] .site-logo {
+  mix-blend-mode: screen;
+}
+[data-theme="light"] .site-logo {
+  mix-blend-mode: multiply;
 }
