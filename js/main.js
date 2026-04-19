@@ -81,7 +81,9 @@ filterBtns.forEach(btn => {
   });
 });
 
-// ── Form — Netlify fetch submission (no redirect needed) ─────
+// ── Form — Google Apps Script submission ──────────────────────
+const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 const formSubmitBtn = document.getElementById('formSubmitBtn');
@@ -90,7 +92,6 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Client-side validation
     const required = contactForm.querySelectorAll('[required]');
     let valid = true;
     required.forEach(field => {
@@ -103,17 +104,25 @@ if (contactForm) {
     });
     if (!valid) return;
 
-    // Disable button while submitting
     formSubmitBtn.disabled = true;
     formSubmitBtn.textContent = 'Sending…';
 
+    const data = {
+      name:     contactForm.querySelector('#name').value,
+      business: contactForm.querySelector('#business').value,
+      email:    contactForm.querySelector('#email').value,
+      phone:    contactForm.querySelector('#phone').value,
+      service:  contactForm.querySelector('#service').value,
+      message:  contactForm.querySelector('#message').value,
+    };
+
     try {
-      await fetch('/', {
+      await fetch(SCRIPT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(contactForm)).toString(),
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
-      // Show success message
       contactForm.style.display = 'none';
       if (formSuccess) formSuccess.style.display = 'block';
     } catch {
