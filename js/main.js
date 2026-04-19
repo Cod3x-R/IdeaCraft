@@ -8,6 +8,8 @@ function setTheme(theme) {
   html.setAttribute('data-theme', theme);
   localStorage.setItem('ideacraft-theme', theme);
   themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  const logoSrc = theme === 'dark' ? 'images/LOGO_Dark.png' : 'images/LOGO_Light.png';
+  document.querySelectorAll('.site-logo').forEach(img => img.src = logoSrc);
 }
 
 // Load saved theme or system preference

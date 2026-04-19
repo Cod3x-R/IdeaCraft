@@ -844,3 +844,15 @@ p  { color: var(--text-secondary); }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
 }
+
+/* ── Logo Image ── */
+.site-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.footer .site-logo {
+  height: 56px;
+}
