@@ -82,7 +82,7 @@ filterBtns.forEach(btn => {
 });
 
 // ── Form — Google Apps Script submission ──────────────────────
-const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCyZxK_SJgqL_bFL9h93yamzUNSi5IixLuIf7FNZxM2IM3pW-BTFmPi570SalG2ojfRg/exec';
 
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
