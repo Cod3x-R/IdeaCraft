@@ -833,12 +833,6 @@ p  { color: var(--text-secondary); }
   width: 160px;
   height: auto;
 }
-[data-theme="dark"] .site-logo {
-  mix-blend-mode: screen;
-}
-[data-theme="light"] .site-logo {
-  mix-blend-mode: multiply;
-}
 
 /* ---------- Responsive ---------- */
 
