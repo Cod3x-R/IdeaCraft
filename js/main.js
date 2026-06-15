@@ -84,7 +84,11 @@ filterBtns.forEach(btn => {
 });
 
 // ── Form — Google Apps Script submission ──────────────────────
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCyZxK_SJgqL_bFL9h93yamzUNSi5IixLuIf7FNZxM2IM3pW-BTFmPi570SalG2ojfRg/exec';
+// 1) After you deploy the automation engine (see automation/SETUP-GUIDE.md),
+//    paste your Web App "/exec" URL below.
+// 2) Set SHARED_SECRET to the SAME value as CONFIG.SHARED_SECRET in 01_Config.gs.
+const SCRIPT_URL    = 'https://script.google.com/macros/s/AKfycbyCyZxK_SJgqL_bFL9h93yamzUNSi5IixLuIf7FNZxM2IM3pW-BTFmPi570SalG2ojfRg/exec';
+const SHARED_SECRET = 'CHANGE-ME-to-a-long-random-string-2026';
 
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
@@ -116,6 +120,7 @@ if (contactForm) {
       phone:    contactForm.querySelector('#phone').value,
       service:  contactForm.querySelector('#service').value,
       message:  contactForm.querySelector('#message').value,
+      secret:   SHARED_SECRET,
     };
 
     try {
