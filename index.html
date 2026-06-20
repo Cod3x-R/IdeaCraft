@@ -15,6 +15,12 @@
 </head>
 <body>
 
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
   <!-- ── Navigation ── -->
   <nav class="nav" id="nav">
     <div class="nav-container">
@@ -60,27 +66,27 @@
       </div>
       <div class="container">
         <div class="hero-content">
-          <div class="hero-badge">
+          <div class="hero-badge anim-in" style="--d: 0s">
             <span class="hero-badge-dot"></span>
             Now accepting new clients — South Africa
           </div>
           <h1>
-            We Build<br>
-            Brands That<br>
-            <span class="gradient-text">Get Noticed.</span>
+            <span class="anim-in" style="--d: .08s">We Build</span>
+            <span class="anim-in" style="--d: .18s">Brands That</span>
+            <span class="gradient-text anim-in" style="--d: .28s">Get Noticed.</span>
           </h1>
-          <p>
+          <p class="anim-in" style="--d: .4s">
             IdeaCraft is a full-service brand design studio for startups and
             growing South African businesses. Logos, websites, social media —
             everything you need to launch and scale.
           </p>
-          <div class="hero-ctas">
+          <div class="hero-ctas anim-in" style="--d: .5s">
             <a href="#packages" class="btn btn-primary btn-lg">View Packages</a>
             <a href="#portfolio" class="btn btn-outline btn-lg">See Our Work ↓</a>
           </div>
-          <div class="hero-stats">
+          <div class="hero-stats anim-in" style="--d: .6s">
             <div>
-              <div class="hero-stat-num">50+</div>
+              <div class="hero-stat-num" data-count="50" data-suffix="+">0</div>
               <div class="hero-stat-label">Brands Launched</div>
             </div>
             <div>
@@ -88,7 +94,7 @@
               <div class="hero-stat-label">Client Rating</div>
             </div>
             <div>
-              <div class="hero-stat-num">72h</div>
+              <div class="hero-stat-num" data-count="72" data-suffix="h">0</div>
               <div class="hero-stat-label">Avg First Draft</div>
             </div>
             <div>
@@ -96,6 +102,9 @@
               <div class="hero-stat-label">Packages From</div>
             </div>
           </div>
+        </div>
+        <div class="hero-scroll-cue anim-in" style="--d: .8s" aria-hidden="true">
+          <span></span>
         </div>
       </div>
     </section>

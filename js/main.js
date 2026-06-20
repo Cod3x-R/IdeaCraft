@@ -140,6 +140,86 @@ if (contactForm) {
   });
 }
 
+// ── Scroll progress bar ──────────────────────────────────────
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    scrollProgress.style.width = (scrolled * 100) + '%';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+// ── Animated stat counters ───────────────────────────────────
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length) {
+  const runCounter = (el) => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(el => counterObserver.observe(el));
+}
+
+// ── Cursor spotlight on cards ────────────────────────────────
+const spotlightCards = document.querySelectorAll('.service-card, .package-card:not(.package-custom), .process-step');
+spotlightCards.forEach(card => {
+  card.addEventListener('pointermove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+// ── Active nav link on scroll ────────────────────────────────
+const navLinkEls = document.querySelectorAll('.nav-links a');
+const sections = [...navLinkEls]
+  .map(a => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+if (sections.length) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinkEls.forEach(a =>
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => spyObserver.observe(s));
+}
+
+// ── Magnetic primary buttons ─────────────────────────────────
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.18;
+      const y = (e.clientY - r.top - r.height / 2) * 0.3;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+  });
+}
+
 // ── Smooth scroll for anchor links ───────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
