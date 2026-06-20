@@ -26,6 +26,19 @@
   --nav-border:     rgba(18, 199, 116, 0.16);
   --shadow:         0 8px 40px rgba(26, 17, 8, 0.08);
   --shadow-lg:      0 24px 64px rgba(26, 17, 8, 0.13);
+
+  /* Ambient aurora */
+  --aurora-1:       rgba(18, 199, 116, 0.22);
+  --aurora-2:       rgba(244, 185, 66, 0.20);
+  --aurora-3:       rgba(78, 221, 170, 0.18);
+  --grid-line:      rgba(26, 17, 8, 0.045);
+  /* Frosted glass surfaces */
+  --glass:          rgba(255, 255, 255, 0.55);
+  --glass-strong:   rgba(255, 255, 255, 0.68);
+  --glass-border:   rgba(255, 255, 255, 0.65);
+  --glass-edge:     rgba(26, 17, 8, 0.07);
+  --glass-highlight: rgba(255, 255, 255, 0.7);
+  --section-alt-bg: linear-gradient(180deg, rgba(245,237,224,0.55), rgba(254,250,244,0.2));
 }
 
 [data-theme="dark"] {
@@ -41,6 +54,19 @@
   --nav-border:     rgba(18, 199, 116, 0.18);
   --shadow:         0 8px 40px rgba(0,0,0,0.55);
   --shadow-lg:      0 24px 64px rgba(0,0,0,0.65);
+
+  /* Ambient aurora */
+  --aurora-1:       rgba(18, 199, 116, 0.28);
+  --aurora-2:       rgba(244, 185, 66, 0.20);
+  --aurora-3:       rgba(78, 221, 170, 0.22);
+  --grid-line:      rgba(245, 237, 224, 0.04);
+  /* Frosted glass surfaces */
+  --glass:          rgba(28, 22, 16, 0.45);
+  --glass-strong:   rgba(28, 22, 16, 0.6);
+  --glass-border:   rgba(255, 255, 255, 0.08);
+  --glass-edge:     rgba(255, 255, 255, 0.06);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --section-alt-bg: linear-gradient(180deg, rgba(20,16,9,0.5), rgba(12,10,8,0.15));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,6 +83,17 @@
     --nav-border:     rgba(18, 199, 116, 0.18);
     --shadow:         0 8px 40px rgba(0,0,0,0.55);
     --shadow-lg:      0 24px 64px rgba(0,0,0,0.65);
+
+    --aurora-1:       rgba(18, 199, 116, 0.28);
+    --aurora-2:       rgba(244, 185, 66, 0.20);
+    --aurora-3:       rgba(78, 221, 170, 0.22);
+    --grid-line:      rgba(245, 237, 224, 0.04);
+    --glass:          rgba(28, 22, 16, 0.45);
+    --glass-strong:   rgba(28, 22, 16, 0.6);
+    --glass-border:   rgba(255, 255, 255, 0.08);
+    --glass-edge:     rgba(255, 255, 255, 0.06);
+    --glass-highlight: rgba(255, 255, 255, 0.12);
+    --section-alt-bg: linear-gradient(180deg, rgba(20,16,9,0.5), rgba(12,10,8,0.15));
   }
 }
 
@@ -907,6 +944,93 @@ p  { color: var(--text-secondary); line-height: 1.75; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* ---------- Ambient aurora canvas ---------- */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+.aurora-1 {
+  width: 62vmax; height: 62vmax;
+  background: radial-gradient(circle, var(--aurora-1) 0%, transparent 66%);
+  top: -18vmax; left: -12vmax;
+  animation: auroraA 24s ease-in-out infinite alternate;
+}
+.aurora-2 {
+  width: 55vmax; height: 55vmax;
+  background: radial-gradient(circle, var(--aurora-2) 0%, transparent 66%);
+  top: 8vmax; right: -16vmax;
+  animation: auroraB 30s ease-in-out infinite alternate;
+}
+.aurora-3 {
+  width: 50vmax; height: 50vmax;
+  background: radial-gradient(circle, var(--aurora-3) 0%, transparent 66%);
+  bottom: -18vmax; left: 30%;
+  animation: auroraC 34s ease-in-out infinite alternate;
+}
+.site-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 70px 70px;
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, #000 10%, transparent 80%);
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, #000 10%, transparent 80%);
+}
+@keyframes auroraA { to { transform: translate(14vmax, 10vmax) scale(1.18); } }
+@keyframes auroraB { to { transform: translate(-12vmax, 12vmax) scale(1.12); } }
+@keyframes auroraC { to { transform: translate(10vmax, -10vmax) scale(1.2); } }
+
+/* ---------- Frosted-glass surfaces ---------- */
+.service-card,
+.package-card:not(.featured):not(.package-custom),
+.process-step,
+.contact-form,
+.filter-btn,
+.theme-toggle,
+.footer-social a {
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border-color: var(--glass-edge);
+}
+.service-card,
+.package-card:not(.featured):not(.package-custom),
+.process-step,
+.contact-form {
+  box-shadow: var(--shadow), inset 0 1px 0 var(--glass-highlight);
+}
+.service-card:hover,
+.package-card:not(.featured):not(.package-custom):hover,
+.process-step:hover {
+  box-shadow: var(--shadow-lg), inset 0 1px 0 var(--glass-highlight);
+}
+.contact-form { background: var(--glass-strong); }
+
+/* Featured card: glassy but bolder */
+.package-card.featured {
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+}
+
+/* Translucent alt sections so the aurora bleeds through */
+.section-alt { background: var(--section-alt-bg); }
+
+/* Service icon / process number get a touch more glass */
+.service-icon, .process-number, .contact-detail-icon {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 /* ---------- Entrance animation ---------- */
 .anim-in {
   opacity: 0;
@@ -921,18 +1045,7 @@ p  { color: var(--text-secondary); line-height: 1.75; }
 
 /* ---------- Hero refinements ---------- */
 .hero-orb-1 { opacity: 0.26; }
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-  opacity: 0.5;
-}
+/* global .site-bg-grid now provides the grid; hero keeps just its orbs */
 
 /* Scroll cue */
 .hero-scroll-cue {
@@ -1010,7 +1123,7 @@ p  { color: var(--text-secondary); line-height: 1.75; }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .anim-in, .gradient-text, .hero-scroll-cue span, .hero-orb, .hero-bg::after, .marquee-track {
+  .anim-in, .gradient-text, .hero-scroll-cue span, .hero-orb, .hero-bg::after, .marquee-track, .aurora {
     animation: none !important;
   }
   .anim-in { opacity: 1; transform: none; }
